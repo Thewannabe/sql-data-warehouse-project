@@ -8,14 +8,14 @@ create table bronze.crm_cust_info (
     cst_key NVARCHAR(50),
     cst_firstname NVARCHAR(100),
     cst_lastname NVARCHAR(100),
-    cst_material_status NVARCHAR(50),
+    cst_marital_status NVARCHAR(50),
     cst_gndr NVARCHAR(50),
     cst_create_date date
 )
 GO
-if object_id('bronze.crm_prd_ind', 'U') is not null
-    drop table bronze.crm_prd_ind;
-create table bronze.crm_prd_ind (
+if object_id('bronze.crm_prd_info', 'U') is not null
+    drop table bronze.crm_prd_info;
+create table bronze.crm_prd_info (
     prd_id int,
     prd_key NVARCHAR(50),
     prd_nm NVARCHAR(100),
@@ -32,9 +32,9 @@ create table bronze.crm_sales_details (
     sls_ord_num NVARCHAR(50),	
     sls_prd_key NVARCHAR(50),
     sls_cust_id int,
-	sls_order_dt date,
-    sls_ship_dt date,
-    sls_due_dt date,
+	sls_order_dt int,
+    sls_ship_dt int,
+    sls_due_dt int,
     sls_sales int,
     sls_quantity int,	
     sls_price int

@@ -27,11 +27,11 @@ BEGIN
 		PRINT '>> -------------';
 
         SET @start_time = GETDATE();
-		PRINT '>> Truncating Table: bronze.crm_prd_ind';
-		TRUNCATE TABLE bronze.crm_prd_ind;
+		PRINT '>> Truncating Table: bronze.crm_prd_info';
+		TRUNCATE TABLE bronze.crm_prd_info;
 
-		PRINT '>> Inserting Data Into: bronze.crm_prd_ind';
-		BULK INSERT bronze.crm_prd_ind
+		PRINT '>> Inserting Data Into: bronze.crm_prd_info';
+		BULK INSERT bronze.crm_prd_info
 		FROM 'C:\Users\kotso\Documents\Personal_Projects\sql-data-warehouse-project\datasets\source_crm\prd_info.csv'
 		WITH (
 			FIRSTROW = 2,
